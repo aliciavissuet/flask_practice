@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask :)</title>
+</head>
+
+<body>
+    <h1>Edit Episode</h1>
+    <a href="{{url_for('sql_database')}}">Back</a>
+    
+    <form action="update" method='POST'>
+        <label for="">Season
+            <input type="text" name='season' value='{{results[0]["Season"]}}'>
+        </label>
+        <br>
+        <label for="">Episode Number
+            <input type="text" name='episode_number' value='{{results[0]["Episode Number"]}}'>
+        </label>
+        <br>
+        <label for="">Number In Season
+            <input type="text" name='number_in_season' value='{{results[0]["Number In Season"]}}'>
+        </label>
+        <br>
+        <label for="">Episode Name
+            <input type="text" name='episode_name' value='{{results[0]["Episode Name"]}}'>
+        </label>
+        <br>
+        <label for="">Director
+            <input type="text" name='director' value='{{results[0]["Director"]}}'>
+        </label>
+        <br>
+        <label for="">Writer
+            <input type="text" name='writer' value='{{results[0]["Writer"]}}'>
+        </label>
+        <br>
+        <label for="">Original Air Date
+            <input type="date" name='original_air_date' value='{{results[0]["Original Air Date"]}}'>
+        </label>
+        <br>
+        <label for="">US Viewers
+            <input type="text" name='us_viewers' value='{{results[0]["Us Viewers (million)"]}}'>
+        </label>
+        <br>
+        <label for="">Runtime
+            <input type="text" name='runtime' value='{{results[0]["Runtime (mins)"]}}'>
+        </label>
+        <br>
+        <label for="">IMDB Description
+            <input type="textarea" name='imdb_description' value='{{results[0]["IMDB Description"]}}'>
+        </label>
+        <br>
+        <label for="">Notable death count
+            <input type="number" name='notable_death_count' value='{{results[0]["Notable Death Count"]}}'>
+        </label>
+        <input type="hidden" name='old_episode_name' value='{{results[0]["Episode Name"]}}'>
+        <br>
+
+        <input type="submit" name="" id="" value='Update'>
+    </form>
+</body>
+
+</html>
